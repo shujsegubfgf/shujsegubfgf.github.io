@@ -1,9 +1,10 @@
 ---
 layout: post
 title: "英国"
-date:2018.6.21
-description: "iOS9 变化笔记, 以及工作中常遇到的问题"
+date: 2018.6.21 
+description: "iOS 使用Runtime 实现动态更新"
 tag: iOS
+
 ---
 
 
