@@ -5,7 +5,32 @@ header : 所有文章
 group: navigation
 ---
 {% include JB/setup %}
-
+<h>网站开发文章分页技术</h>
+<h>一、什么是分页技术</h>
+<p>分页,是一种将所有数据分段展示给用户的技术.用户每次看到的不是全部数据,而是其中的一部分,如果在其中没有找到自习自己想要的内容,用户可以通过制定页码或是翻页的方式转换可见内容,直到找到自己想要的内容为止.其实这和我们阅读书籍很类似.</p>
+<h>二、 步骤（利用thinkphp的api）</h>
+<p>1、进入Home下的index控制器IndexController.class.php，在index函数中注释掉其中的文章内容循环代码，加上文章分页代码</p>
+<p>文章分页代码如下（thinkphp的api）
+//文章分页
+        $first=D('first');//数据表名称
+        $count=$first->count();// 查询满足要求的总记录数
+        $Page=new\Think\Page($count,2);// 实例化分页类 传入总记录数和每页显示的记录数(2)，2代表一页显示2篇文章
+        $show=$Page->show();// 分页显示输出
+        $list=$first->limit($Page->firstRow.','.$Page->listRows)->select();// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+        $this->assign('list',$list);// 赋值数据集
+        $this->assign('page',$show);// 赋值分页输出
+</p>
+<h>2、修改Home/View/Index下的index.html代码中的volist的name属性，将原本的firsts改成list（因为控制器中文章内容循环代码已经注释了所以这里的firsts失效，volist对应的name对应文章分页代码中的赋值数据集）</h>
+<p></p>
+<h></h>
+<p></p>
+<h></h>
+<p></p>
+<h></h>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 {% assign posts_collate = site.posts %}
 <div class="page card">
 {% include JB/posts_collate %}
