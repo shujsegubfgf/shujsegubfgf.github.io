@@ -5,7 +5,7 @@ date: 2018.6.21
 tags: 机器学习    
 ---
  
-MV(http://www.iqiyi.com/v_19rr97svn8.html) 
+MV(http://www.iqiyi.com/v_19rr97svn8.html/) 
  
 # 告白气球 （周杰伦演唱歌曲）
 
